@@ -1,0 +1,17 @@
+variables:
+  DOCKER_FILE: Dockerfile
+
+stages:
+  - build_filter_ms_peaks_ann-ratio
+  - push_filter_ms_peaks_ann-ratio
+
+build_filter_ms_peaks_ann-ratio:
+  stage: build_filter_ms_peaks_ann-ratio
+  script:
+    - docker build -f $DOCKER_FILE -t registry.cobrain.io/functions/filter_ms_peaks_ann-ratio .
+
+push_filter_ms_peaks_ann-ratio:
+  stage: push_filter_ms_peaks_ann-ratio
+  script:
+    - docker push registry.cobrain.io/functions/filter_ms_peaks_ann-ratio
+

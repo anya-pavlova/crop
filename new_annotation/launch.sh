@@ -1,0 +1,1 @@
+python ./entry.py -d LMSDFDownload6Dec16FinalAll.sdf.converted -i ./input -o ./output
